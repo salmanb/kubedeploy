@@ -21,12 +21,6 @@ type Label struct {
 	Value string `toml:"value"`
 }
 
-type Port struct {
-	Name       string `toml:"name"`
-	Protocol   string `toml:"protocol"`
-	PortNumber int    `toml:"portnum"`
-}
-
 type Container struct {
 	Image string `toml:"image"`
 	Tag   string `toml:"tag"`
@@ -38,7 +32,6 @@ type Deployment struct {
 	Replicas  int32 `toml:"replicas"`
 	Name      string
 	Label     []Label
-	Port      []Port
 	Container []Container
 }
 

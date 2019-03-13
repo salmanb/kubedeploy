@@ -1,0 +1,23 @@
+replicas = 2
+name = "test-deployment"
+
+[[container]]
+image = "nginx"
+tag = "alpine"
+name = "web"
+  [[container.port]]
+    name = "http"
+    portnum = 80
+    protocol = "tcp"
+  [[container.port]]
+    name = "https"
+    portnum = 443
+    protocol = "tcp"
+
+[[label]]
+key = "app"
+value = "test-deploy"
+
+[[label]]
+key = "region"
+value = "us-east-1"

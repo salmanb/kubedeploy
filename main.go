@@ -80,9 +80,9 @@ func main() {
 	for i, _ := range dply.Label {
 		lblSelectorMap[dply.Label[i].Key] = dply.Label[i].Value
 	}
-	ports := make([]apiv1.ContainerPort, 0)
 	containers := make([]apiv1.Container, 0)
 	for i, _ := range dply.Container {
+	  ports := make([]apiv1.ContainerPort, 0)
 		for j, _ := range dply.Container[i].Port {
 			port := apiv1.ContainerPort{
 				Name:          dply.Container[i].Port[j]["name"].(string),

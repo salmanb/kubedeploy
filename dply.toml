@@ -14,6 +14,19 @@ name = "web"
     portnum = 443
     protocol = "tcp"
 
+[[container]]
+image = "nginx"
+tag = "latest"
+name = "web1"
+  [[container.port]]
+    name = "http"
+    portnum = 80
+    protocol = "tcp"
+  [[container.port]]
+    name = "https"
+    portnum = 443
+    protocol = "tcp"
+
 [[label]]
 key = "app"
 value = "test-deploy"

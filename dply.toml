@@ -1,5 +1,5 @@
 replicas = 2
-name = "test-deployment"
+releasename = "test-deployment"
 
 [[container]]
 image = "nginx"

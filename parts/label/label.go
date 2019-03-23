@@ -3,7 +3,6 @@ package label
 import (
   "fmt"
   "github.com/BurntSushi/toml"
-  "io"
 )
 
 type label struct {
@@ -15,10 +14,10 @@ type Label struct {
   Label []label `toml:"label"`
 }
 
-func MakeLabelMap(r io.Reader) (map[string]string, error) {
+func MakeLabelMap(s string) (map[string]string, error) {
   var l Label
   lmap := make(map[string]string)
-  _, err := toml.DecodeReader(r, &l)
+  _, err := toml.Decode(s, &l)
   if (err != nil) {
     fmt.Println("Error Occurred")
     return nil, err

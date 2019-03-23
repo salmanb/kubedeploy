@@ -10,6 +10,7 @@ type container struct {
   Image   string `toml:"image"`
   Tag     string `toml:"tag"`
   Name    string `toml:"name"`
+  Command string  `toml:"command"`
   Port    []map[string]interface{}
 }
 
@@ -45,6 +46,7 @@ func MakeList(s string) ([]apiv1.Container, error) {
       Name:  c.Container[i].Name,
       Image: c.Container[i].Image + ":" + c.Container[i].Tag,
       Ports: ports,
+      Command: strings.Split(c.Container[i].Command, " "),
     }
     clist = append(clist, container)
   }

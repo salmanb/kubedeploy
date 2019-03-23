@@ -5,6 +5,7 @@ releasename = "test-deployment"
 image = "nginx"
 tag = "alpine"
 name = "web"
+command = "/bin/bash -x test.sh"
   [[container.port]]
     name = "http"
     portnum = 80
@@ -18,6 +19,7 @@ name = "web"
 image = "nginx"
 tag = "latest"
 name = "web1"
+command = "/bin/bash -x test2.sh"
   [[container.port]]
     name = "http"
     portnum = 80

@@ -14,6 +14,16 @@ command = "/bin/bash -x test.sh"
     name = "https"
     portnum = 443
     protocol = "tcp"
+  [[container.env]]
+    name = "DEMO_GREETING"
+    value = "DEMO VALUE"
+    [container.env.from]
+      type = "configmap"
+      name = "service-config"
+      key = "config"
+  [[container.env]]
+    name = "DEMO_GREETING2"
+    value = "DEMO VALUE2"
 
 [[container]]
 image = "nginx"

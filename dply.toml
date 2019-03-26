@@ -6,6 +6,16 @@ image = "nginx"
 tag = "alpine"
 name = "web"
 command = "/bin/bash -x test.sh"
+  [container.resource.request]
+    cpu = "500m"
+    memory = "1Gi"
+    storage = "5Gi"
+    ephemeralstorage = "10Gi"
+  [container.resource.limit]
+    cpu = "1024m"
+    memory = "2Gi"
+    storage = "10Gi"
+    ephemeralstorage = "20Gi"
   [[container.port]]
     name = "http"
     portnum = 80

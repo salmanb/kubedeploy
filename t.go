@@ -42,6 +42,12 @@ for k, v := range(a) {
    fmt.Printf("Ports: %v\n", c[i].Ports)
    fmt.Printf("Ports: %T\n", c[i].Ports)
    fmt.Println("")
+   fmt.Printf("Env: %v\n", c[i].Env)
+   fmt.Printf("Env: %T\n", c[i].Env)
+   fmt.Println("")
+   fmt.Printf("Resources: %v\n", c[i].Resources)
+   fmt.Printf("Resources: %T\n", c[i].Resources)
+   fmt.Println("")
  }
 
 }
